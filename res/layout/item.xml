@@ -1,38 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/itemRoot"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
+
+
     <CheckBox
             android:id="@+id/cbBox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
     </CheckBox>
+
     <LinearLayout
             android:id="@+id/linearLayout1"
             android:layout_width="match_parent"
             android:layout_height="90dp"
             android:layout_marginLeft="5dp"
             android:layout_weight="1"
-            android:orientation="vertical">
+            android:orientation="vertical"
+          >
         <TextView
                 android:id="@+id/descr"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:text=""
                 android:textSize="15sp">
         </TextView>
     </LinearLayout>
+
     <ImageView
             android:id="@+id/image"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:maxHeight="50sp"
-            android:maxWidth="50sp"
-            android:minHeight="50sp"
-            android:minWidth="50sp"
+            android:layout_width="80dp"
+            android:layout_height="60dp"
             android:src="@drawable/ic_launcher">
     </ImageView>
 </LinearLayout>

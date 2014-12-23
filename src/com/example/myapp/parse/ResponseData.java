@@ -10,7 +10,6 @@ public class ResponseData {
     private List<Result> responseData;
     @Key("cursor")
     private Cursor cursor;
-
     public List<Result> getResponseData() {
         return responseData;
     }

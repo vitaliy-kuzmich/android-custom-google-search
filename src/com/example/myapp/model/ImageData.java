@@ -12,6 +12,15 @@ public class ImageData {
     private String url;
     private String tmbUrl;
     private boolean isFavourite;
+    private int maxServerResultSize=-1;
+
+    public int getMaxServerResultSize() {
+        return maxServerResultSize;
+    }
+
+    public void setMaxServerResultSize(int maxServerResultSize) {
+        this.maxServerResultSize = maxServerResultSize;
+    }
 
     public boolean isFavourite() {
         return isFavourite;
@@ -61,4 +70,5 @@ public class ImageData {
     public void setTmbUrl(String tmbUrl) {
         this.tmbUrl = tmbUrl;
     }
+
 }

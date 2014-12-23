@@ -4,8 +4,11 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:id="@+id/full_s_view"
               android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:minWidth="1000dp"
+              android:minHeight="1000dp"
+              android:background="@color/abs__background_holo_dark"
         >
 
     <TextView
@@ -13,11 +16,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="loading..."/>
+            android:text="loading..." android:background="#ff003bff"/>
     <ImageView
             android:id="@+id/fullScrImage"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:adjustViewBounds="true"/>

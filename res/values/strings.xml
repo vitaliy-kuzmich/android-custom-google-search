@@ -4,4 +4,7 @@
     <string name="main_fragment_title">Search</string>
     <string name="favourites_fragment_title">favourite</string>
     <string name="listLoading">loading</string>
+    <string name="search_title">search images</string>
+    <string name="search_hint">Image name</string>
+    <string name="no_data">no data</string>
 </resources>

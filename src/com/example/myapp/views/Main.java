@@ -1,10 +1,15 @@
 package com.example.myapp.views;
 
+import android.graphics.Point;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
+import android.view.Display;
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.SherlockFragmentActivity;
+import com.actionbarsherlock.view.Menu;
+import com.actionbarsherlock.view.MenuInflater;
+import com.example.myapp.Const;
 import com.example.myapp.R;
 import com.example.myapp.adapters.ViewPagerAdapter;
 
@@ -15,9 +20,18 @@ public class Main extends SherlockFragmentActivity implements ActionBar.TabListe
     private ActionBar actionBar;
     private ViewPager viewPager;
 
+    public ViewPager getViewPager() {
+        return viewPager;
+    }
+
+    public void setViewPager(ViewPager viewPager) {
+        this.viewPager = viewPager;
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        long time = System.currentTimeMillis();
         setContentView(R.layout.main);
         viewPager = (ViewPager) findViewById(R.id.pager);
         viewPager.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
@@ -29,9 +43,19 @@ public class Main extends SherlockFragmentActivity implements ActionBar.TabListe
         });
         viewPager.setAdapter(new ViewPagerAdapter(getSupportFragmentManager()));
         addActionBarTabs();
-
+        setScreenSize();
+        time = System.currentTimeMillis() - time;
+        if (time > 0)
+            time = time;
     }
 
+    private void setScreenSize() {
+        Display display = getWindowManager().getDefaultDisplay();
+        Point size = new Point();
+        display.getSize(size);
+        Const.DISPLAY_WIDTH = size.x;
+        Const.DISPLAY_HEIGHT = size.y;
+    }
 
     private void addActionBarTabs() {
         actionBar = getSupportActionBar();
@@ -55,6 +79,22 @@ public class Main extends SherlockFragmentActivity implements ActionBar.TabListe
 
     @Override
     public void onTabReselected(ActionBar.Tab tab, FragmentTransaction ft) {
+    }
+
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Const.isEnabled.set(false);
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getSupportMenuInflater();
+        inflater.inflate(R.menu.options_menu, menu);
+
+        return true;
     }
 
 

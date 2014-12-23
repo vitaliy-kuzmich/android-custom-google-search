@@ -3,42 +3,45 @@ package com.example.myapp.parse;
 
 import com.google.api.client.util.Key;
 
-import java.net.URL;
-
 public class Result {
-    @Key
+/*    @Key
     private String GsearchResultClass;
     @Key
     private int width;
     @Key
     private int height;
     @Key
-    private String imageId;
-    @Key
     private int tbWidth;
     @Key
     private int tbHeight;
-    @Key
-    private String unescapedUrl;
-    @Key
-    private String url;
-    @Key
-    private String visibleUrl;
-    @Key
-    private String title;
-    @Key
+     @Key
     private String titleNoFormatting;
-    @Key
+     @Key
     private String originalContextUrl;
-    @Key
+     @Key
     private String content;
     @Key
     private String contentNoFormatting;
+     @Key
+    private String visibleUrl;
+    @Key
+    private String unescapedUrl;*/
+
+    @Key
+    private String imageId;
+
+
+    @Key
+    private String url;
+
+    @Key
+    private String title;
+
     @Key
     private String tbUrl;
 
 
-    public String getGsearchResultClass() {
+   /* public String getGsearchResultClass() {
         return GsearchResultClass;
     }
 
@@ -60,14 +63,6 @@ public class Result {
 
     public void setHeight(int height) {
         this.height = height;
-    }
-
-    public String getImageId() {
-        return imageId;
-    }
-
-    public void setImageId(String imageId) {
-        this.imageId = imageId;
     }
 
     public int getTbWidth() {
@@ -94,14 +89,6 @@ public class Result {
         this.unescapedUrl = unescapedUrl;
     }
 
-    public String getUrl() {
-        return url;
-    }
-
-    public void setUrl(String url) {
-        this.url = url;
-    }
-
     public String getVisibleUrl() {
         return visibleUrl;
     }
@@ -110,13 +97,6 @@ public class Result {
         this.visibleUrl = visibleUrl;
     }
 
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
 
     public String getTitleNoFormatting() {
         return titleNoFormatting;
@@ -148,7 +128,34 @@ public class Result {
 
     public void setContentNoFormatting(String contentNoFormatting) {
         this.contentNoFormatting = contentNoFormatting;
+    }*/
+
+    public String getImageId() {
+        return imageId;
     }
+
+    public void setImageId(String imageId) {
+        this.imageId = imageId;
+    }
+
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
 
     public String getTbUrl() {
         return tbUrl;

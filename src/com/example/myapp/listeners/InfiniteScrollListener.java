@@ -1,14 +1,16 @@
 package com.example.myapp.listeners;
 
+import android.support.v4.content.Loader;
 import android.widget.AbsListView;
+import com.example.myapp.Const;
 
 /**
  * Created by v on 16.11.2014.
  */
-public abstract class InfiniteScrollListener implements AbsListView.OnScrollListener {
+public class InfiniteScrollListener implements AbsListView.OnScrollListener {
     // The minimum amount of items to have below your current scroll position
     // before loading more.
-    private int visibleThreshold = 5;
+    private int visibleThreshold = Const.CACHE_SIZE / 2;
     // The current offset index of data you have loaded
     private int currentPage = 0;
     // The total number of items in the dataset after the last load
@@ -17,6 +19,15 @@ public abstract class InfiniteScrollListener implements AbsListView.OnScrollList
     private boolean loading = true;
     // Sets the starting page index
     private int startingPageIndex = 0;
+    Loader.ForceLoadContentObserver observer;
+
+    public Loader.ForceLoadContentObserver getObserver() {
+        return observer;
+    }
+
+    public void setObserver(Loader.ForceLoadContentObserver observer) {
+        this.observer = observer;
+    }
 
     public InfiniteScrollListener() {
     }
@@ -31,9 +42,6 @@ public abstract class InfiniteScrollListener implements AbsListView.OnScrollList
         this.currentPage = startPage;
     }
 
-    // This happens many times a second during a scroll, so be wary of the code you place here.
-    // We are given a few useful parameters to help us work out if we need to load some more data,
-    // but first we check if we are waiting for the previous load to finish.
     @Override
     public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
         // If the total item count is zero and the previous isn't, assume the
@@ -65,10 +73,12 @@ public abstract class InfiniteScrollListener implements AbsListView.OnScrollList
     }
 
     // Defines the processMini for actually loading more data based on page
-    public abstract void onLoadMore(int page, int totalItemsCount);
+    public void onLoadMore(int page, int totalItemsCount) {
+        if (observer != null)
+            observer.onChange(true);
+    }
 
     @Override
     public void onScrollStateChanged(AbsListView view, int scrollState) {
-        // Don't take any action on changed
     }
 }

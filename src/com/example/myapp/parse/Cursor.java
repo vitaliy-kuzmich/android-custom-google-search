@@ -5,17 +5,17 @@ import com.google.api.client.util.Key;
 import java.util.List;
 
 public class Cursor {
-    @Key("resultCount")
+   // @Key("resultCount")
     private String resultCount;
     @Key("pages")
     private List<Page> pages;
-    @Key("estimatedResultCount")
+  //  @Key("estimatedResultCount")
     private int estimatedResultCount;
-    @Key("currentPageIndex")
+    //@Key("currentPageIndex")
     private int currentPageIndex;
-    @Key("moreResultsUrl")
+   // @Key("moreResultsUrl")
     private String moreResultsUrl;
-    @Key("searchResultTime")
+    //@Key("searchResultTime")
     private float searchResultTime;
 
     public String getResultCount() {

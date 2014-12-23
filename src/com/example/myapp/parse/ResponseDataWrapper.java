@@ -6,10 +6,10 @@ import com.google.api.client.util.Key;
 public class ResponseDataWrapper {
     @Key
     private ResponseData responseData;
-    @Key
+  /*  @Key
     private Object responseDetails;
     @Key
-    private int responseStatus;
+    private int responseStatus;*/
 
     public ResponseData getResponseData() {
         return responseData;
@@ -19,7 +19,7 @@ public class ResponseDataWrapper {
         this.responseData = responseData;
     }
 
-    public Object getResponseDetails() {
+  /*  public Object getResponseDetails() {
         return responseDetails;
     }
 
@@ -33,5 +33,5 @@ public class ResponseDataWrapper {
 
     public void setResponseStatus(int responseStatus) {
         this.responseStatus = responseStatus;
-    }
+    }*/
 }

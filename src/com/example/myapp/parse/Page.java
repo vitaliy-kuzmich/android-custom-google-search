@@ -5,7 +5,7 @@ import com.google.api.client.util.Key;
 public class Page {
     @Key
     private int start;
-    @Key
+    // @Key
     private int label;
 
     public int getStart() {

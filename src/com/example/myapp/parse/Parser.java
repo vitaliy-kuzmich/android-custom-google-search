@@ -16,7 +16,7 @@ public class Parser {
     private Parser() {
     }
 
-    HttpRequestFactory requestFactory =
+    static final HttpRequestFactory requestFactory =
             HTTP_TRANSPORT.createRequestFactory(new HttpRequestInitializer() {
                 @Override
                 public void initialize(HttpRequest request) {
