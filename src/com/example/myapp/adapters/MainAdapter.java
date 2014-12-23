@@ -1,6 +1,7 @@
 package com.example.myapp.adapters;
 
 import android.content.Context;
+import android.text.Html;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -149,8 +150,8 @@ public  class MainAdapter extends BaseAdapter {
         vh.listPosition = position;
         try {
             vh.imageView.setImageBitmap(vh.data.getImage());
-            // vh.text.setText(Html.fromHtml(vh.data.getImageTitle()));
-            vh.text.setText(String.valueOf(position));
+             vh.text.setText(Html.fromHtml(vh.data.getImageTitle()));
+           // vh.text.setText(String.valueOf(position));
         } catch (NullPointerException ex) {
             ex.printStackTrace();
         }
