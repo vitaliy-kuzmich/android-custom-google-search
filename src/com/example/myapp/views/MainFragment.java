@@ -185,6 +185,7 @@ public abstract class MainFragment<T> extends SherlockListFragment implements Vi
             l = getSherlockActivity().getSupportLoaderManager().initLoader(loaderId, req, this);
             if (loaderId == Const.LOADER_DB_)
                 l.forceLoad();
+				
         } else {
             l = getSherlockActivity().getSupportLoaderManager().restartLoader(loaderId, req, this);
             if (!l.isStarted() && l.isReset()) {
